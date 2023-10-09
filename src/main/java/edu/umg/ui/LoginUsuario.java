@@ -10,28 +10,57 @@ import java.awt.event.ActionListener;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 
-public class UsuarioSwingUI extends JFrame {
+// Por falta de tiempo y para evitar utilizar el editor de formularios de IntelliJ,
+// la mayor parte del código de esta clase de UI fue generado por ChatGPT y Copilot
+// con modificaciones mías. Esta parte del programa es ejecutable desde
+// main.java.
+// El resto del programa, fue escrito por mí con base en lo investigado.
+// Todas las funciones de las clases DAO funcionan correctamente en las
+// clases del package test (Las clases de Manejo), como la encriptación y validación
+// de contraseñas.
+public class LoginUsuario extends JFrame {
+    private JLabel label1;
+    private JLabel label2;
+    private JLabel label3;
+    private JLabel label4;
+    private JLabel label5;
     private JTextField usernameField;
     private JPasswordField passwordField;
     private JButton loginButton;
     private JLabel resultLabel;
 
-    public UsuarioSwingUI() {
+    public LoginUsuario() {
         setTitle("Login de Usuario");
-        setSize(300, 150);
+        setSize(300, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(3, 2));
+        panel.setLayout(new GridLayout(8, 2));
 
-        JLabel usernameLabel = new JLabel("Usuario:");
+        label1 = new JLabel("Usuarios precargados:");
+        label2 = new JLabel("User:       Password:");
+        label3 = new JLabel("Miranda  passwabc");
+        label4 = new JLabel("Alma        passwjkl");
+        label5 = new JLabel("Joelix      passwxyz");
+
         usernameField = new JTextField();
+        JLabel usernameLabel = new JLabel("Usuario:");
         JLabel passwordLabel = new JLabel("Contraseña:");
         passwordField = new JPasswordField();
         loginButton = new JButton("Iniciar sesión");
         resultLabel = new JLabel();
 
+        panel.add(label1);
+        panel.add(new JLabel()); // Espacio en blanco
+        panel.add(label2);
+        panel.add(new JLabel()); // Espacio en blanco
+        panel.add(label3);
+        panel.add(new JLabel()); // Espacio en blanco
+        panel.add(label4);
+        panel.add(new JLabel()); // Espacio en blanco
+        panel.add(label5);
+        panel.add(new JLabel()); // Espacio en blanco
         panel.add(usernameLabel);
         panel.add(usernameField);
         panel.add(passwordLabel);
@@ -67,7 +96,7 @@ public class UsuarioSwingUI extends JFrame {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                UsuarioSwingUI frame = new UsuarioSwingUI();
+                LoginUsuario frame = new LoginUsuario();
                 frame.setVisible(true);
             }
         });
