@@ -70,6 +70,8 @@ public class ManejoUsuarios {
 //            insertarUsuario.setUsername(sc.next());
 //            System.out.println("Ingrese la contraseña del usuario a insertar:");
 //            insertarUsuario.setPassword(sc.next());
+//            // Nota: Tuve que expandir el tamaño de la columna password en la base de datos a 64 caracteres
+//            // para que almacenar el hash de la contraseña
 //            usuarioJdbc.insert(insertarUsuario);
 //            conexion.commit(); // Queda permanente en la base de datos
 //            System.out.println("Se ha hecho commit de la transaccion.");
